@@ -1,0 +1,18 @@
+.commentsMain{
+  display: flex;
+}
+
+.leftColumnComments{
+  float: left;
+  width: 10%;
+}
+
+.rightColumnComments{
+  float: right;
+  width: 10%;
+}
+
+.centerColumnComments{
+  width: 80%;
+  text-align: center;
+}

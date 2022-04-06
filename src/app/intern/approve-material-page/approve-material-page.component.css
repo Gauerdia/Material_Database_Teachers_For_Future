@@ -1,0 +1,36 @@
+
+.approveMemberTitleRow{
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.approveMemberTitleLeftColumn{
+  background-color: darkseagreen;
+  color: white;
+  width: 20%;
+  float:left;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-right: 1px solid grey;
+  border-top: 1px solid grey;
+}
+.approveMemberTitleRightColumn{
+  background-color: darkseagreen;
+  color: white;
+  width: 20%;
+  float:right;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-top: 1px solid grey;
+}
+
+.inactiveStar{
+  color: black;
+}
+
+.activeStar{
+  color: green;
+}

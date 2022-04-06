@@ -1,0 +1,61 @@
+<div style="height: 100px;padding-top: 5%">
+</div>
+
+<div style="text-align: center;padding-bottom: 5%; font-size: 24px">
+
+  <p>Die Kommentarspalte zum Material {{material.title}}</p>
+
+</div>
+
+<div class="commentsMain">
+
+  <div class="leftColumnComments">
+  </div>
+
+
+  <div class="centerColumnComments">
+    <div *ngFor="let comment of comments" style="border: 1px solid darkgrey; width: 50%; margin-bottom: 2%;margin-left: 25%">
+      <div style="text-align: center">
+        <div style="padding-bottom: 2%;padding-top: 2%;border: #888888">
+          {{comment.content}}
+        </div>
+
+        <div style="display: inline-block; width: 50%; text-align: center;background-color: darkseagreen;padding-top: 2%;padding-bottom: 2%">
+          {{comment.creatorName}}
+        </div>
+        <div style="display: inline-block; width: 50%;text-align: center;background-color: darkseagreen;padding-top: 2%;padding-bottom: 2%">
+          {{comment.date}}
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top: 10%;margin-bottom: 10%">
+      <div style="margin-bottom: 5%">
+        <p style="color: grey;font-size: 22px">
+          Kommentar erstellen
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Schreiben Sie etwas!
+        </p>
+      </div>
+      <div>
+        <mat-form-field class="form-field" appearance="outline" style="width:40%">
+          <mat-label>Nachricht</mat-label>
+          <input matInput #input placeholder="Nachricht" [(ngModel)]="commentInput">
+        </mat-form-field>
+      </div>
+      <div>
+        <button (click)="sendComment()">Abschicken</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="rightColumnComments">
+  </div>
+</div>

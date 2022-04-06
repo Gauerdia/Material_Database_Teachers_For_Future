@@ -1,0 +1,199 @@
+<div style="height: 60px">
+
+</div>
+<div
+  style="text-align:center;
+    padding-top:5%;
+    font-size: 28px;
+    padding-bottom: 3%;
+    color: dimgrey"
+>
+  <p>
+    Neue Ressource eintragen
+  </p>
+</div>
+
+<div class="newMaterialMain">
+
+  <div class="newMaterialLeft">
+
+  </div>
+
+  <div class="newMaterialCenter">
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:40%">
+        <mat-label>Titel</mat-label>
+        <input matInput #input placeholder="Titel" [(ngModel)]="titleInput">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline" style="margin-left: 10%;width: 40%">
+        <mat-label>AutorIn</mat-label>
+        <input matInput #input placeholder="AutorIn" [(ngModel)]="authorInput">
+      </mat-form-field>
+    </div>
+
+
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:40%">
+        <mat-label>Organisation</mat-label>
+        <input matInput #input placeholder="Organisation" [(ngModel)]="organisationInput">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline" style="margin-left: 10%;width: 40%">
+        <mat-label>Link</mat-label>
+        <input matInput #input placeholder="www.f4f.de" [(ngModel)]="linkInput">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:40%">
+        <mat-label>Schlagworte</mat-label>
+        <input matInput #input placeholder="Schlagwort" [(ngModel)]="keywordInput">
+      </mat-form-field>
+
+      <mat-form-field style="margin-left:10%;width: 40%">
+        <mat-label>Fach/Fächer</mat-label>
+        <mat-select multiple [(ngModel)]="selectedSubjects">
+          <mat-option
+            *ngFor='let subject of subjectSelection'
+            [value]="subject">
+            {{subject.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <div>
+
+      <mat-form-field style="width: 40%">
+        <mat-label>Altersempfehlung</mat-label>
+        <mat-select multiple [(ngModel)]="selectedAges">
+          <mat-option
+            *ngFor='let age of ageRecommendSelection'
+            [value]="age">
+            {{age.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field style="margin-left: 10%;width: 40%">
+        <mat-label>Niveau</mat-label>
+        <mat-select (selectionChange)="selectNiveau($event)">
+          <mat-option
+            *ngFor='let niveau of niveauSelection'
+            [value]="niveau">
+            {{niveau.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div>
+      <mat-form-field style="width: 40%">
+        <mat-label>Themengebiete</mat-label>
+        <mat-select multiple [(ngModel)]="selectedTopics">
+          <mat-option
+            *ngFor='let topic of topicSelection'
+            [value]="topic">
+            {{topic.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field style="margin-left: 10%;width: 40%">
+        <mat-label>Evaluation</mat-label>
+        <mat-select (selectionChange)="selectEvaluation($event)">
+          <mat-option
+            *ngFor='let topic of evaluationSelection'
+            [value]="topic">
+            {{topic.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field style="width: 40%">
+        <mat-label>Lizenz</mat-label>
+        <mat-select (selectionChange)="selectLicence($event)">
+          <mat-option
+            *ngFor='let topic of licenceSelection'
+            [value]="topic">
+            {{topic.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field style="margin-left: 10%;width: 40%">
+        <mat-label>Art</mat-label>
+        <mat-select multiple [(ngModel)]="selectedTypes">
+          <mat-option
+            *ngFor='let type of typeSelection'
+            [value]="type">
+            {{type.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field style="width: 40%">
+        <mat-label>SDG Ziele</mat-label>
+        <mat-select multiple [(ngModel)]="selectedSDGGoals">
+          <mat-option
+            *ngFor='let SDG of SDGGoalSelection'
+            [value]="SDG">
+            {{SDG.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:90%;height:100px">
+        <mat-label>Beschreibung</mat-label>
+        <input matInput #input placeholder="Beschreibung"  [(ngModel)]="descriptionInput">
+      </mat-form-field>
+    </div>
+
+    <div style="text-align: center">
+      <p>
+        Falls vorhanden bitte hier einen Nachweis über die Lizenz hochladen
+      </p>
+    </div>
+
+    <div style="margin-top: 2%; margin-bottom: 2%;text-align: center">
+      <input
+        class="test"
+        type="file"
+             (change)="onChangeLicenceUpload($event)">
+    </div>
+
+    <div style="text-align: center">
+      <p>
+        Falls Sie irgendeine Datei hochladen möchten, tun Sie dies bitte hier:
+      </p>
+    </div>
+
+    <div style="margin-top: 2%; margin-bottom: 2%;text-align: center">
+      <input class="test" type="file"
+             (change)="onChangeFileAttachmentUpload($event)">
+    </div>
+
+    <div style="margin-top: 5%;margin-bottom: 10%">
+      <button (click)="submitMaterial()"
+              style="margin-left: 25%;width: 50%;background-color: darkseagreen; color: white;padding-bottom: 1%;padding-top: 1%">
+        Senden
+      </button>
+    </div>
+
+  </div>
+
+
+
+  <div class="newMaterialRight">
+  </div>
+</div>
+

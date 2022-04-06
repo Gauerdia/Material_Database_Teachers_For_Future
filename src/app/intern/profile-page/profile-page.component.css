@@ -1,0 +1,79 @@
+.profileFlex{
+  display:flex;
+  text-align: center;
+  background-color: red;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.divName{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  background-color: darkseagreen
+}
+
+.divNameContent{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: white
+}
+
+.divMail{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  background-color: darkseagreen
+}
+
+.divMailContent{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: white
+}
+
+.divRolle{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  background-color: darkseagreen
+}
+
+.divRolleContent{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: white
+}
+
+.divErfahrung{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  background-color: darkseagreen
+}
+
+.divErfahrungContent{
+  text-align: center;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: white
+}

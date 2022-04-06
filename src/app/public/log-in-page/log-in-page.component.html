@@ -1,0 +1,46 @@
+<div style="text-align: center;padding-top: 60px;">
+  <p style="color: grey;font-size: 22px">
+    Loggen Sie sich mit Ihren Zugangsdaten ein.
+  </p>
+</div>
+<div class="flexParent">
+  <div class="leftColumn">
+  </div>
+
+  <div class="centerColumn" style="margin-left: 25%;margin-top: 5%">
+    <div>
+      <p>
+        Ihre E-Mail Adresse
+      </p>
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>E-Mail Adresse</mat-label>
+        <input matInput #input
+               placeholder="ihre@mail.de" [(ngModel)]="eMailInput"
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      Ihr Passwort
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>Passwort</mat-label>
+        <input matInput #input
+               placeholder="passwort" type="password" [(ngModel)]="passwordInput">
+      </mat-form-field>
+    </div>
+    <div>
+      <button
+        style="background-color: darkseagreen; color: white; width: 50%;padding-top: 1%;padding-bottom: 1%"
+        (click)="logIn()"
+      >
+        Einloggen
+      </button>
+    </div>
+  </div>
+
+  <div class="rightColumn">
+  </div>
+</div>

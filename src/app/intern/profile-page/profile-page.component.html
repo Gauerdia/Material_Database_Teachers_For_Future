@@ -1,0 +1,86 @@
+<div>
+
+  <div style="height: 50px">
+
+  </div>
+  <div
+    style="text-align:center;
+    padding-top:5%;
+    font-size: 28px;
+    padding-bottom: 3%;
+    color: dimgrey"
+  >
+    <p>
+      Profil
+    </p>
+  </div>
+
+    <div class="profileFlex">
+      <div class="divName">
+        Name
+      </div>
+      <div class="divMail">
+        E-Mail
+      </div>
+    </div>
+
+    <div class="profileFlex">
+      <div class="divNameContent">
+        {{user? user.name : "Lädt"}}
+      </div>
+      <div class="divMailContent">
+        {{user?user.email : "Lädt"}}
+      </div>
+    </div>
+
+    <div class="profileFlex">
+      <div class="divRolle">
+        Rolle
+      </div>
+      <div class="divErfahrung">
+        Berufserfahrung
+      </div>
+    </div>
+
+    <div class="profileFlex">
+      <div class="divRolleContent">
+        {{user? user.role === 0 ? "Einfaches Mitglied"
+        : user.role === 1? "Vollwertiges Mitglied" : user.role === 2?
+        "RedakteurIn" : user.role === 3? "Redaktionsleiter" : "Lädt" : "Lädt"}}
+      </div>
+      <div class="divErfahrungContent">
+        {{user ? user.experience : "Lädt"}}
+      </div>
+    </div>
+
+    <div *ngIf="user? user.role > 2: false" style="padding-top: 10%;padding-bottom: 20%;">
+      <div style="font-size: 22px; color: grey;text-align: center">
+        Neuen Eintrag für Kategorien erstellen:
+      </div>
+      <div style="margin-top: 5%; margin-left: 32%">
+          <p>
+            Kategorie
+          </p>
+          <mat-form-field style="width: 50%">
+            <mat-label>Kategorie</mat-label>
+            <mat-select (selectionChange)="selectCategory($event)">
+              <mat-option
+                *ngFor='let category of categorySelection'
+                [value]="category">
+                {{category}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+        <div style="margin-left: 24%">
+          <mat-form-field class="form-field" appearance="outline" style="margin-left: 10%;width: 40%">
+            <mat-label>Neuer Eintrag:</mat-label>
+            <input matInput #input placeholder="Neuer Eintrag" [(ngModel)]="categoryInput">
+          </mat-form-field>
+        </div>
+        <div style="margin-left: 31.5%;">
+          <button style="background-color: darkseagreen;color:white;" (click)="clickCreateCategoryContent()">Erstellen</button>
+        </div>
+      </div>
+    </div>
+

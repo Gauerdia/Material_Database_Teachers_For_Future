@@ -1,27 +1,94 @@
-# TeachersForFutureMaterialDBV2
+# Teachers for future Materialdatenbank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Idea
 
-## Development server
+The idea behind this project has been to develop a platform for the organisation "Teachers for future"
+where they had the possibility to gather all their material, all their information and all the content
+they would like to share and evaluate in one place. 
+Furthermore, they wished for different quality-of-life features such as filtering, commenting, rating, etc.
+All of this has been implemented so that their workflow can be as fluent as possible.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Functionalities
 
-## Code scaffolding
+The functionalities can be separated in two sections.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Public part
 
-## Build
+-   Homepage
+    -   A basic introduction and information about the platform
+-   Public Search
+    -   A search engine with various filter options 
+    -   The entries will be shown with title and evaluations
+-   Sign Up
+    -   Signing up for the private part of the platform
+-   Log In
+    -   Logging in to the private part of the platform
+-   About
+    -   Information about the persons responsible for the page
+-   Privacy Policy
+    -   Information about the privacy policy of the page
+-   Detail pages
+    -   Information about the material, possibility to contact the creator   
+ 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Private part
 
-## Running unit tests
+-   Profile
+    -   Information about the one data, like experience, e-mail address or role
+-   Advanced Search
+    -   Similar to the public search but the results are now offering more detailed information
+-   Add new Ressource
+    -   Adding new ressources with a lot of possible information
+-   Approve User
+    -   Users, which sign up for the page do not have permissions for everything immediately. The persons managing the page are supposed to check if the new user is valid.
+-   Approve Material
+    -   New material is not automatically part of the database but has to be evaluated and approved.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technology
 
-## Running end-to-end tests
+This version has been developed with AngularJS and Firebase.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Angular
 
-## Further help
+AngularJS is a powerful front end framework that enables the user to develop in a structured way while
+having a lot of features and libraries already at hand.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Firebase
+
+Firebase is a mobile app platform with integrated, unified client libraries in various mobile programming languages.
+Firebase offers different backend-as-a-service (BaaS) features to help develop high-quality apps with
+relatively low effort.
+
+## Launching/Updating the project
+
+If one wishes to test this project locally, it can be called with this command:
+`ng serve`
+and will be available at:
+`http://localhost:4200/`
+
+The project needs to be build before being deployed to firebase. This is taken care of with this command:
+`ng build --prod --aot`
+
+After the build, the project can be deployed with this command:
+`firebase deploy`
+
+The entry information for the firebase project have to be inserted into the `environment.ts` file
+
+## Dependencies
+
+Firebase needs a few dependencies for everything to work fine.
+
+Nowadays it seems to suffice using this command:
+`npm install firebase --save`
+
+Should errors occur, it might be useful to also install these parts:
+`npm install -g firebase-tools`
+`ng add @angular/fire`
+
+There are a few more apart from firebase like:
+`npm i @angular/material`
+`npm install emailjs`
+
+However, I do not recall all of them, and it will be quite clear, which ones
+are lacking when first starting the application.
+

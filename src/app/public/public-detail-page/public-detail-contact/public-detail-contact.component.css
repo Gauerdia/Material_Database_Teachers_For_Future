@@ -1,0 +1,40 @@
+.contactMain{
+  display: flex;
+}
+
+.leftColumnContact{
+  float: left;
+  width: 10%;
+}
+
+.rightColumnContact{
+  float: right;
+  width: 10%;
+}
+
+.centerColumnContact{
+  width: 80%;
+  text-align: center;
+}
+
+.publicDetailContactButton{
+  margin-top: 4%;
+  background-color: darkseagreen;
+  color: white;
+  width: 50%;
+  border: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.publicDetailContactButton:hover{
+  border: 1px solid black;
+}
+.form-field{
+  width: 50%;
+}
+.form-field-last{
+  width: 50%;
+  height: 50%;
+}

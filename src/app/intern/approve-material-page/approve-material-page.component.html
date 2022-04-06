@@ -1,0 +1,66 @@
+<div style="padding-top: 10%;height: 40px;">
+
+</div>
+
+<div style="text-align: center; margin-bottom: 5%; font-size: 26px; color: grey">
+  <p>
+    Neues Material freigeben
+  </p>
+</div>
+
+<div style="margin-bottom: 10%">
+  <div class="approveMemberTitleRow">
+    <div class="approveMemberTitleLeftColumn">
+      Titel
+    </div>
+    <div class="approveMemberTitleLeftColumn">
+      Autor
+    </div>
+    <div class="approveMemberTitleLeftColumn">
+      Bewertung
+    </div>
+    <div class="approveMemberTitleLeftColumn" style="width: 10%;">
+      Anschauen
+    </div>
+    <div class="approveMemberTitleRightColumn" style="width: 10%;">
+      Bestätigen
+    </div>
+  </div>
+
+  <div *ngFor="let item of material">
+
+    <div class="approveMemberTitleRow">
+
+      <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+        {{item.title}}
+      </div>
+
+      <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+        {{item.author}}
+      </div>
+
+      <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+        <mat-icon [ngClass]="calculateMean(item.evaluationConcept, 0)">star</mat-icon>
+        <mat-icon [ngClass]="calculateMean(item.evaluationConcept, 1)">star</mat-icon>
+        <mat-icon [ngClass]="calculateMean(item.evaluationConcept, 2)">star</mat-icon>
+        <mat-icon [ngClass]="calculateMean(item.evaluationConcept, 3)">star</mat-icon>
+        <mat-icon [ngClass]="calculateMean(item.evaluationConcept, 4)">star</mat-icon>
+      </div>
+
+      <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black;width: 10%">
+
+        <a href="https://material-teachersforfuture.web.app/detailPageAdvanced/{{item.id}}" target="_blank">
+          <mat-icon style="color: darkgreen">assignment</mat-icon>
+        </a>
+
+<!--        <button [routerLink]="['/detailPageAdvanced', item.id]">Icon</button>-->
+      </div>
+
+      <div class="approveMemberTitleRightColumn" style="background-color: white;color: black;width: 10%">
+        <button style="background-color: darkseagreen;color:white;" (click)="onClickApprove(item.id)">Bestätigen</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

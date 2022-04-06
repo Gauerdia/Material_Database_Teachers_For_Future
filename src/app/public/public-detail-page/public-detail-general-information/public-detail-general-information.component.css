@@ -1,0 +1,62 @@
+
+.publicDetailGeneralInfoMain{
+  display: flex;
+}
+
+.leftColumnPublicDetail{
+  float: left;
+  width: 10%;
+}
+
+.rightColumnPublicDetail{
+  float: right;
+  width: 10%;
+}
+
+.centerColumnPublicDetail{
+  text-align: center;
+  width: 80%;
+}
+
+
+.GeneralInfoDiv{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.headLeft{
+  display: inline-block;
+  background-color: darkseagreen;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  width: 50%
+}
+.headRight{
+  display: inline-block;
+  background-color: darkseagreen;
+  width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+}
+
+.contentLeft{
+  display: inline-block;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 50%
+}
+.contentRight{
+  display: inline-block;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 50%
+}
+
+a{
+  color: black
+}
+a:hover{
+  color: green;
+}

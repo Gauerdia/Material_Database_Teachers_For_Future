@@ -1,0 +1,31 @@
+<div class="internMain">
+  <div class="flexParentButtons">
+    <div
+      (click)="toggleGeneralInformation()"
+      [ngClass]="getNavClassGeneralInformation(activeGeneralInformation)"
+    >
+      Allgemeine Information
+    </div>
+    <div
+      (click)="toggleEvaluation()"
+      [ngClass]="getNavClassEvaluation(activeEvaluation)"
+    >
+      Evaluation
+    </div>
+    <div (click)="toggleComments()"
+         [ngClass]="getNavClassComment(activeComments)">
+      Kommentare
+    </div>
+    <div (click)="toggleContact()"
+         [ngClass]="getNavClassContact(activeContact)">
+      Kontakt
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <ng-template privateDetailHost></ng-template>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+.newMaterialMain{
+  display: flex;
+}
+
+.newMaterialLeft{
+  float: left;
+  width: 10%;
+}
+
+.newMaterialCenter{
+  width: 80%;
+  margin:auto;
+}
+
+.newMaterialRight{
+  float: right;
+  width: 10%;
+}

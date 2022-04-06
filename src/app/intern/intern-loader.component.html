@@ -1,0 +1,30 @@
+<div class="internMain">
+  <div class="flexParentButtons">
+    <div (click)="toggleProfile()" [ngClass]="getNavClassProfile(activeProfile)" >
+      Profile
+    </div>
+    <div (click)="togglePrivateSearch()"
+         [ngClass]="getNavClassPrivateSearch(activePrivateSearch)">
+      Erweiterte Suche
+    </div>
+    <div (click)="toggleNewMaterial()"
+         [ngClass]="getNavClassNewMaterial(activeNewMaterial)">
+      Neue Ressource erstellen
+    </div>
+    <div (click)="toggleApproveMember()"
+         [ngClass]="getNavClassApproveMember(activeApproveMember)">
+      Neue Nutzer freigeben
+    </div>
+    <div (click)="toggleApproveMaterial()"
+         [ngClass]="getNavClassApproveMaterial(activeApproveMaterial)">
+      Neues Material freigeben
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <ng-template internHost></ng-template>
+    </div>
+  </div>
+
+</div>

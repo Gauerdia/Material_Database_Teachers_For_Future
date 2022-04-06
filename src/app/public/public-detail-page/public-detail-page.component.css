@@ -1,0 +1,33 @@
+.navButtonLayout{
+  width: 20%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: darkseagreen;
+  float:left;
+  text-align: center;
+}
+
+
+.navButtonInactive{
+  width: 33.33%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: darkseagreen;
+  color: grey;
+  float:left;
+  text-align: center;
+  cursor: pointer;
+}
+.navButtonActive{
+  width: 33.33%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: darkseagreen;
+  color: white;
+  float:left;
+  text-align: center;
+  cursor: pointer;
+}
+.navButtonInactive:hover{
+  background-color: #c3dbc3;
+}

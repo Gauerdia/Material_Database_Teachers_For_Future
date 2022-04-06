@@ -1,0 +1,62 @@
+<div style="padding-top: 10%;padding-bottom:5%;text-align: center; font-size: 22px">
+  <p>
+    Verfassen Sie eine E-Mail an den Ersteller
+  </p>
+</div>
+
+<div class="contactMain" style="margin-bottom: 10%">
+
+<!--  LEFT-->
+
+  <div class="leftColumnContact">
+  </div>
+
+<!--  CENTER-->
+
+  <div class="centerColumnContact" >
+    <form class="contact-form" (submit)="sendEmail($event)">
+    <div>
+      <p>
+        Ihr Name
+      </p>
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput #input placeholder="Max Mustermann" name="user_name">
+      </mat-form-field>
+    </div>
+    <div>
+      <p>
+        Ihre E-Mail Adresse
+      </p>
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>E-Mail</mat-label>
+        <input matInput #input placeholder="beispiel@bei.spiel" name="user_email">
+      </mat-form-field>
+    </div>
+    <div>
+      <p>
+        Ihre Nachricht
+      </p>
+    </div>
+    <div>
+      <mat-form-field class="form-field-last" appearance="outline">
+        <mat-label>Nachricht</mat-label>
+        <input matInput #input placeholder="Schreiben Sie etwas!" name="message">
+      </mat-form-field>
+    </div>
+    <div>
+      <button class="publicDetailContactButton" type="submit" value="Send">Absenden</button>
+    </div>
+    </form>
+  </div>
+
+<!--  RIGHT-->
+
+  <div class="rightColumnContact">
+  </div>
+
+</div>

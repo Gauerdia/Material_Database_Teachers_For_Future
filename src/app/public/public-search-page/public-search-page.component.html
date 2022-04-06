@@ -1,0 +1,242 @@
+<div>
+
+
+  <div style="height: 60px"></div>
+
+  <div style="text-align: center; margin-bottom: 5%">
+    <p style="font-size: 26px; color: grey">
+      Allgemeine Suche
+    </p>
+  </div>
+
+
+
+  <div class="flexParent">
+
+
+<!--    LEFT COLUMN-->
+
+
+    <div class="publicSearchLeftColumn">
+    </div>
+
+
+<!--    CENTER COLUMN-->
+
+
+    <div class="publicSearchCenterColumn">
+      <div style="margin-left:15%">
+
+        <div>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Titel</mat-label>
+            <input matInput #input placeholder="Titel" [(ngModel)]="titleInput" (input)="inputFieldChange()">
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>AuthorIn</mat-label>
+            <input matInput #input placeholder="AutorIn" [(ngModel)]="authorInput"(input)="inputFieldChange()">
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Organisation</mat-label>
+            <input matInput #input placeholder="organisation" [(ngModel)]="organisationInput" (input)="inputFieldChange()">
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Schlagworte</mat-label>
+            <input matInput #input placeholder="schlagwort" [(ngModel)]="keywordInput" (input)="inputFieldChange()">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Themengebiete</mat-label>
+            <mat-select (selectionChange)="selectTopic($event)">
+              <mat-option
+                *ngFor='let topic of topicSelection'
+                [value]="topic">
+                {{topic.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Evaluation</mat-label>
+            <mat-select (selectionChange)="selectEvaluation($event)">
+              <mat-option
+                *ngFor='let evaluation of evaluationSelection'
+                [value]="evaluation">
+                {{evaluation.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select (selectionChange)="selectNiveau($event)">
+              <mat-option
+                *ngFor='let niveau of niveauSelection'
+              [value]="niveau">
+                {{niveau.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Art</mat-label>
+            <mat-select
+              (selectionChange)="selectType($event)">
+              <mat-option
+                *ngFor='let art of typeSelection'
+                [value]="art">
+                {{art.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Lizenz</mat-label>
+            <mat-select
+              (selectionChange)="selectLicence($event)">
+              <mat-option
+                *ngFor='let licence of licenceSelection'
+                [value]="licence">
+                {{licence.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Alterseinschätzung</mat-label>
+            <mat-select
+              (selectionChange)="selectAgeRecommend($event)">
+              <mat-option
+                *ngFor='let ageRec of ageRecommendSelection'
+                [value]="ageRec">
+                {{ageRec.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fach</mat-label>
+            <mat-select (selectionChange)="selectSubject($event)">
+              <mat-option
+                *ngFor='let subject of subjectSelection'
+                [value]="subject">
+                {{subject.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+
+
+<!--    RIGHT COLUMN-->
+
+
+    <div class="publicSearchRightColumn">
+    </div>
+  </div>
+
+
+<!--  CONTENT LIST-->
+
+  <div class="searchResultContentRow" style="padding-bottom: 20%">
+
+    <div *ngFor="let item of materialSorted" >
+
+      <div class="searchResult">
+
+        <!--HEAD-->
+
+        <div class="searchResultHead" >
+          <div class="searchResultHeadName"
+               style="border-left: 1px solid grey;border-top: 1px solid grey">
+            <p>Name</p>
+          </div>
+          <div class="searchResultHeadAuthor">
+            <p>AutorIn</p>
+          </div>
+          <div class="searchResultHeadEvaluation">
+            Konzeptbewertung
+          </div>
+          <div class="searchResultHeadEvaluation">
+            Erprobungsbewertung
+          </div>
+          <div class="searchResultHeadClick">
+          </div>
+        </div>
+
+        <!--CONTENT-->
+
+        <div class="searchResultContent" style="margin-bottom: 2%">
+          <div class="searchResultContentName"
+            style="border-left:1px solid grey; border-bottom: 1px solid grey">
+            <p>
+              {{item.title}}
+            </p>
+          </div>
+          <div class="searchResultContentAuthor"
+               style="border-bottom: 1px solid grey">
+            <p>
+              {{item.author}}
+            </p>
+          </div>
+          <div class="searchResultContentEvaluation"
+               style="border-bottom: 1px solid grey">
+            <p>
+              <mat-icon [ngClass]="calculateMean(item.evaluationConcept,0)">
+                {{calculateMean(item.evaluationConcept,0) == "activeStar"? "star" : "star_bordered"}}
+              </mat-icon>
+              <mat-icon [ngClass]="calculateMean(item.evaluationConcept,1)">
+                {{calculateMean(item.evaluationConcept,1) == "activeStar"? "star" : "star_bordered"}}
+              </mat-icon>
+              <mat-icon [ngClass]="calculateMean(item.evaluationConcept,2)">
+                {{calculateMean(item.evaluationConcept,2) == "activeStar"? "star" : "star_bordered"}}
+              </mat-icon>
+              <mat-icon [ngClass]="calculateMean(item.evaluationConcept,3)">
+                {{calculateMean(item.evaluationConcept,3) == "activeStar"? "star" : "star_bordered"}}
+              </mat-icon>
+              <mat-icon [ngClass]="calculateMean(item.evaluationConcept,4)">
+                {{calculateMean(item.evaluationConcept,4) == "activeStar"? "star" : "star_bordered"}}
+              </mat-icon>
+            </p>
+          </div>
+          <div class="searchResultContentEvaluation"
+               style="border-bottom: 1px solid grey">
+            <mat-icon [ngClass]="calculateMean(item.evaluationTested,0)">
+              {{calculateMean(item.evaluationTested,0) == "activeStar"? "star" : "star_bordered"}}
+            </mat-icon>
+            <mat-icon [ngClass]="calculateMean(item.evaluationTested,1)">
+              {{calculateMean(item.evaluationTested,1) == "activeStar"? "star" : "star_bordered"}}
+            </mat-icon>
+            <mat-icon [ngClass]="calculateMean(item.evaluationTested,2)">
+              {{calculateMean(item.evaluationTested,2) == "activeStar"? "star" : "star_bordered"}}
+            </mat-icon>
+            <mat-icon [ngClass]="calculateMean(item.evaluationTested,3)">
+              {{calculateMean(item.evaluationTested,3) == "activeStar"? "star" : "star_bordered"}}
+            </mat-icon>
+            <mat-icon [ngClass]="calculateMean(item.evaluationTested,4)">
+              {{calculateMean(item.evaluationTested,4) == "activeStar"? "star" : "star_bordered"}}
+            </mat-icon>
+          </div>
+          <div class="searchResultContentClick"
+               style="border-bottom: 1px solid grey; border-right:1px solid grey ">
+
+            <a [routerLink]="['/detailPage', item.id]">
+              <mat-icon class="customIcon">keyboard_arrow_right</mat-icon>
+            </a>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

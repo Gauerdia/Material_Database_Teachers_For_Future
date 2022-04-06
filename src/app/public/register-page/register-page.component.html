@@ -1,0 +1,66 @@
+<div style="text-align: center;padding-top: 60px;">
+  <p style="color: grey;font-size: 22px">
+    Registrieren Sie sich auf der Plattform!
+  </p>
+</div>
+<div class="flexParent">
+  <div class="leftColumn">
+  </div>
+
+  <div class="centerColumn" style="margin-left: 25%;margin-top: 5%">
+    <div>
+      Ihr Name
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>Name</mat-label>
+        <input matInput #input
+               placeholder="Max Mustermann" [(ngModel)]="nameInput">
+      </mat-form-field>
+    </div>
+    <div>
+      <p>
+        Ihre E-Mail Adresse
+      </p>
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>E-Mail Adresse</mat-label>
+        <input matInput #input
+               placeholder="ihre@email.de" [(ngModel)]="eMailInput"
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      Ihr Passwort
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>Passwort</mat-label>
+        <input matInput #input
+               placeholder="passwort" type="password" [(ngModel)]="passwordInput">
+      </mat-form-field>
+    </div>
+    <div>
+      Berufserfahrung
+    </div>
+    <div>
+      <mat-form-field class="form-field" appearance="outline" style="width:50%">
+        <mat-label>Berufserfahrung</mat-label>
+        <input matInput #input
+               placeholder="2 Jahre" [(ngModel)]="experienceInput">
+      </mat-form-field>
+    </div>
+    <div>
+      <button
+        style="background-color: darkseagreen; color: white; width: 50%;padding-top: 1%;padding-bottom: 1%"
+        (click)="register()"
+      >
+        Registrieren
+      </button>
+    </div>
+  </div>
+
+  <div class="rightColumn">
+  </div>
+</div>

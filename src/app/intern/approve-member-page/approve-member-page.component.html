@@ -1,0 +1,47 @@
+<div style="padding-top: 10%;height: 40px;">
+
+</div>
+
+<div style="text-align: center; margin-bottom: 5%; font-size: 26px; color: grey">
+  <p>
+    Neue Nutzer freigeben
+  </p>
+</div>
+
+<div class="approveMemberTitleRow">
+  <div class="approveMemberTitleLeftColumn">
+    Name
+  </div>
+  <div class="approveMemberTitleLeftColumn">
+    E-Mail
+  </div>
+  <div class="approveMemberTitleLeftColumn">
+    Berufserfahrung
+  </div>
+  <div class="approveMemberTitleRightColumn">
+    Bestätigen
+  </div>
+</div>
+
+<div *ngFor="let user of users">
+
+  <div class="approveMemberTitleRow">
+
+    <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+      {{user.name}}
+    </div>
+    <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+      {{user.email}}
+    </div>
+    <div class="approveMemberTitleLeftColumn" style="background-color: white;color: black">
+      {{user.experience}}
+    </div>
+    <div class="approveMemberTitleRightColumn" style="background-color: white;color: black">
+      <button style="background-color: darkseagreen;color: white;"
+              (click)="onClickBestaetigen(user.id)">
+        Bestätigen
+      </button>
+    </div>
+  </div>
+
+</div>

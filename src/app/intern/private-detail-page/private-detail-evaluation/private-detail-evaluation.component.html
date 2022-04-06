@@ -1,0 +1,218 @@
+<div style="text-align: center;padding-top: 10%;padding-bottom: 5%">
+  <p style="font-size: 22px; color: grey">
+    Evaluation des Materials
+  </p>
+</div>
+<div class="publicDetailGeneralInfoMain">
+
+<!--  LEFT SIDE-->
+
+  <div class="leftColumnPublicDetail">
+  </div>
+
+<!--  CENTER PART-->
+
+  <div class="centerColumnPublicDetail">
+    <div class="mainColumn">
+<!--      <star-rating [starType]="'svg'" [rating]="1"></star-rating>-->
+      <div>
+        <div class="headLeft">
+          Bewertung des Konzepts:
+        </div>
+        <div class="headRight">
+          Bewertung nach Erprobung:
+        </div>
+      </div>
+
+      <div>
+        <div class="contentLeft">
+          <mat-icon [ngClass]="getStarConcept(1)">{{conceptStars[0]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(2)">{{conceptStars[1]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(3)">{{conceptStars[2]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(4)">{{conceptStars[3]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(5)">{{conceptStars[4]}}</mat-icon>
+        </div>
+        <div class="contentRight">
+          <mat-icon [ngClass]="getStarConcept(1)">{{conceptStars[0]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(2)">{{conceptStars[1]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(3)">{{conceptStars[2]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(4)">{{conceptStars[3]}}</mat-icon>
+          <mat-icon [ngClass]="getStarConcept(5)">{{conceptStars[4]}}</mat-icon>
+        </div>
+      </div>
+
+      <div>
+        <div class="headLeft">
+          Gefunden von:
+        </div>
+        <div class="headRight">
+          Begutachtet von:
+        </div>
+      </div>
+
+      <div>
+        <div class="contentLeft">
+          {{material.foundByName}}
+        </div>
+        <div class="contentRight">
+          {{material.examinedByName}}
+        </div>
+      </div>
+
+      <div>
+        <div class="headLeft">
+          Nachweis der Begutachtung:
+        </div>
+        <div class="headRight">
+          Nachweis der Lizenz:
+        </div>
+      </div>
+
+      <div>
+        <div class="contentLeft">
+          <div *ngIf="checkAlreadyExamined() == true; else notExamined">
+            <a href="{{material.proofExaminedUrl}}">Link</a>
+          </div>
+          <ng-template #notExamined>
+            <p>
+              Keine Angabe
+            </p>
+          </ng-template>
+
+        </div>
+
+        <div class="contentRight">
+          <div *ngIf="checkLicenceProof() == true; else noLicence">
+            <a href="{{material.licenceUrl}}">Link</a>
+          </div>
+          <ng-template #noLicence>
+            <p>
+              Keine Angabe
+            </p>
+          </ng-template>
+        </div>
+
+      </div>
+
+      <div style="height: 100px">
+
+      </div>
+
+      <div style="padding-bottom: 10%;">
+        <p style="font-size: 22px;color: grey">
+          Deine Evaluation
+        </p>
+      </div>
+
+      <div>
+        <div style="display: inline-block; width: 50%">
+          <div>
+            <p>
+              Eigene Evaluation des Konzepts:
+            </p>
+          </div>
+          <div>
+            <mat-icon (click)="setStarConcept(1)" class="activeStar">{{tempConceptStars[0]}}</mat-icon>
+            <mat-icon (click)="setStarConcept(2)" class="activeStar">{{tempConceptStars[1]}}</mat-icon>
+            <mat-icon (click)="setStarConcept(3)" class="activeStar">{{tempConceptStars[2]}}</mat-icon>
+            <mat-icon (click)="setStarConcept(4)" class="activeStar">{{tempConceptStars[3]}}</mat-icon>
+            <mat-icon (click)="setStarConcept(5)" class="activeStar">{{tempConceptStars[4]}}</mat-icon>
+          </div>
+          <div *ngIf="alreadyEvaluatedTested;else alternative1">
+            <p>
+              Sie haben bereits abgestimmt.
+            </p>
+          </div>
+          <ng-template #alternative1>
+            <p>
+              Sie haben noch nicht abgestimmt.
+            </p>
+          </ng-template>
+          <button style="background-color: darkseagreen;color: white" (click)="sendConceptEvaluation()">Senden</button>
+        </div>
+        <div style="display: inline-block; width: 50%">
+          <div>
+            <p>
+              Eigene Evaluation nach Erprobung:
+            </p>
+          </div>
+          <div>
+            <mat-icon (click)="setStarTested(1)" class="activeStar">{{tempTestedStars[0]}}</mat-icon>
+            <mat-icon (click)="setStarTested(2)" class="activeStar">{{tempTestedStars[1]}}</mat-icon>
+            <mat-icon (click)="setStarTested(3)" class="activeStar">{{tempTestedStars[2]}}</mat-icon>
+            <mat-icon (click)="setStarTested(4)" class="activeStar">{{tempTestedStars[3]}}</mat-icon>
+            <mat-icon (click)="setStarTested(5)" class="activeStar">{{tempTestedStars[4]}}</mat-icon>
+          </div>
+          <div *ngIf="alreadyEvaluatedConcept;else alternative2">
+            <p>
+              Sie haben bereits abgestimmt.
+            </p>
+          </div>
+          <ng-template #alternative2>
+            <p>
+              Sie haben noch nicht abgestimmt.
+            </p>
+          </ng-template>
+          <button style="background-color: darkseagreen;color: white" (click)="sendTestedEvaluation()">Senden</button>
+        </div>
+      </div>
+      <div style="padding-top: 15%">
+        <div style="margin-bottom: 5%">
+          <p style="font-size: 22px; color: grey">
+            Nachträgliches Hochladen von Dokumenten
+          </p>
+        </div>
+        <div>
+          <div style="display: inline-block; width: 50%">
+            <div>
+              <p>
+                Nachweis der Begutachtung
+              </p>
+            </div>
+            <div style="margin-bottom: 2%; margin-top: 2%">
+              <input
+                class="test"
+                type="file"
+                (change)="onChangeLicenceUpload($event)">
+            </div>
+            <div>
+              <button style="background-color: darkseagreen;color: white" (click)="uploadLicence()">
+                Abschicken
+              </button>
+            </div>
+          </div>
+          <div style="display: inline-block; width: 50%">
+            <div>
+              <p>
+                Nachweis der Lizenz
+              </p>
+            </div>
+            <div style="margin-bottom: 2%; margin-top: 2%">
+              <input
+              class="test"
+              type="file"
+              (change)="onChangeLicenceUpload($event)">
+            </div>
+            <div>
+              <button style="background-color: darkseagreen;color: white" (click)="uploadExamined()">
+                Abschicken
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="height: 100px">
+
+      </div>
+
+    </div>
+  </div>
+
+<!--  RIGHT SIDE-->
+
+  <div class="rightColumnPublicDetail">
+  </div>
+
+</div>

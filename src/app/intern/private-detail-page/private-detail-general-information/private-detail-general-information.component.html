@@ -1,0 +1,184 @@
+<div class="publicDetailsHeadline" style="margin-bottom: 5%;padding-top: 10%;text-align: center ">
+  <p style="font-size: 22px;color: grey">
+    Details zu dem Material {{material.title}}
+  </p>
+</div>
+
+<div class="publicDetailGeneralInfoMain">
+  <div class="leftColumnPublicDetail">
+  </div>
+
+  <div class="centerColumnPublicDetail" style="margin-bottom: 10%">
+
+    <div class="DetailsDiv" style="border: 1px solid lightgrey">
+
+      <div class="GeneralInfoDiv">
+        <p>
+          Allgemeine Informationen
+        </p>
+      </div>
+
+
+      <div class="mainColumn">
+
+        <div>
+          <div class="headLeft">
+            Titel
+          </div>
+          <div class="headRight">
+            AutorIn
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            {{material.title !== "" ? material.title : "Keine Angabe"}}
+          </div>
+          <div class="contentRight">
+            {{material.author !== "" ? material.author : "Keine Angabe"}}
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft">
+            Organisation
+          </div>
+          <div class="headRight">
+            Art
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            {{material.organisation !== "" ? material.organisation : "Keine Angabe"}}
+          </div>
+          <div class="contentRight">
+            {{material.type !== "" ? material.type : "Keine Angabe"}}
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft">
+            Evaluation
+          </div>
+          <div class="headRight">
+            Alterseinschätzung
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            {{material.evaluation!== "" ? material.evaluation : "Keine Angabe"}}
+          </div>
+          <div class="contentRight">
+            {{material.ageRecommend !== "" ? material.ageRecommend : "Keine Angabe"}}
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft">
+            Niveau
+          </div>
+          <div class="headRight">
+            Lizenz
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            {{material.level !== "" ? material.level : "Keine Angabe"}}
+          </div>
+          <div class="contentRight">
+            {{material.licence !== "" ? material.licence : "Keine Angabe"}}
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft">
+            Themengebiete
+          </div>
+          <div class="headRight">
+            Schlagwörter
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            {{material.topic !== "" ? material.topic : "Keine Angabe"}}
+          </div>
+          <div class="contentRight">
+            {{material.keywords !== "" ? material.keywords : "Keine Angabe"}}
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft">
+            Lizenznachweis
+          </div>
+          <div class="headRight">
+            Hochgeladenes Material
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft">
+            <div *ngIf="this.licenceLinkLegit == true; else licenceNotLegit">
+              <a href={{material.licenceUrl}}>
+                Link
+              </a>
+            </div>
+            <ng-template #licenceNotLegit>
+              <p>Keine Angabe</p>
+            </ng-template>
+          </div>
+          <div class="contentRight">
+            <div *ngIf="this.attachmentLinkLegit == true; else attachmentNotLegit">
+              <a href={{material.fileAttachmentUrl}}>
+                Link
+              </a>
+            </div>
+            <ng-template #attachmentNotLegit>
+              <p>Keine Angabe</p>
+            </ng-template>
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft" style="width: 100%">
+            Url
+          </div>
+        </div>
+
+        <div>
+          <div class="contentLeft" style="width: 100%">
+            <div *ngIf="this.urlLegit == true; else attachmentNotLegit">
+              <a href={{material.url}}>
+                Link
+              </a>
+            </div>
+            <ng-template #urlNotLegit>
+              <p>Keine Angabe</p>
+            </ng-template>
+          </div>
+        </div>
+
+        <div>
+          <div class="headLeft" style="width: 100%;">
+            Beschreibung
+          </div>
+        </div>
+        <div>
+          <div class="contentLeft" style="width: 100%">
+            {{material.description !== "" ? material.description : "Keine Angabe"}}
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="rightColumnPublicDetail">
+    </div>
+
+  </div>
+</div>

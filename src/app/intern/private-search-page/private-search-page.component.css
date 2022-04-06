@@ -1,0 +1,212 @@
+.searchResultContentRow{
+  margin-top: 5%;
+}
+
+.flexParent{
+  display: flex;
+}
+
+.publicSearchLeftColumn{
+  float: left;
+  width: 1%;
+}
+
+.publicSearchRightColumn{
+  float: right;
+  width: 7%;
+}
+
+.publicSearchCenterColumn{
+  float: left;
+  text-align: center;
+  width: 92%;
+}
+
+
+.searchResult{
+  /*border-top: 1px solid grey;*/
+  /*border-right: 1px solid grey;*/
+  /*border-bottom: 1px solid grey;*/
+}
+
+.searchResultHead{
+  display: flex;
+}
+
+.searchResultContent{
+  display: flex;
+}
+
+.element {
+  display: inline-block;
+  background: #ce8888;
+}
+
+
+/*RESULT HEAD PART*/
+
+
+.searchResultHeadName{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  margin-left: 7%;
+  background-color: darkseagreen;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-right: 0.1%;
+
+}
+.searchResultHeadAuthor{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  background-color: darkseagreen;
+  text-align: center;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-right: 0.1%;
+  border-top: 1px solid grey;
+}
+.searchResultHeadEvaluation{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  background-color: darkseagreen;
+  text-align: center;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-right: 0.1%;
+  border-top: 1px solid grey;
+}
+.searchResultHeadClick{
+  float: left;
+  display: inline-block;
+  width: 5%;
+  background-color: darkseagreen;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+
+/*RESULT CONTENT PART*/
+
+
+.searchResultContentName{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  margin-left: 7%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.searchResultContentAuthor{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.searchResultContentEvaluation{
+  float: left;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.searchResultContentClick{
+  float: left;
+  display: inline-block;
+  width: 5.4%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+
+.customIcon{
+  color: green;
+  transform: scale(1.5);
+
+}
+.customIcon:hover{
+  color: greenyellow;
+}
+
+
+.activeStar{
+  color: green;
+}
+
+.inactiveStar{
+  color: black
+}
+
+
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.mat-input-element,
+.box-test,
+.mat-hint,
+.ng-tns-c80-1,
+.ng-star-inserted,
+.mat-select-value
+{
+  color: black;
+  caret-color: black;
+}
+
+.mat-select-value{
+  color: #1976d2;
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+  color: green;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: green !important;;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: green !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: darkseagreen!important;
+  opacity: 1!important;
+}
